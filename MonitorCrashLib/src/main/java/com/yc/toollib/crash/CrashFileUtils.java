@@ -207,7 +207,7 @@ public final class CrashFileUtils {
             if (string.contains(":")){
                 splitEx = ex.toString().split(":")[0];
             } else {
-                splitEx = "java.lang.Exception";
+                splitEx = ex.toString();
             }
             String newName = "V" + versionName + "_" + crashTime + "_" + splitEx + CRASH_REPORTER_EXTENSION;
             File newFile = new File(dir, newName);

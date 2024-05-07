@@ -158,6 +158,9 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         //收集crash信息
         String msg = ex.getLocalizedMessage();
         if (msg == null) {
+            msg = ex.getStackTrace().toString();
+        }
+        if (msg == null) {
             return false;
         }
         ToolLogUtils.w(TAG, "handleException--- ex-----"+msg);
